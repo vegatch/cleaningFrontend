@@ -5,7 +5,7 @@ const Work = ({title, titleDesc}) =>{
     return(
         <div className="section-container">
             <div className="residential">
-                    <div>
+                    <div className="why-desc-container"> 
                         <h4>
                             {title}
                         </h4>

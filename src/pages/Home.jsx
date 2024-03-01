@@ -13,7 +13,7 @@ const Home = () => {
 
     
     const messageImporant = `
-     Enjoy a clean, tidy and healthy home or office without having to do it yourself.
+     Enjoy a cleaner, tidier and healthier home or office without doing it.
     `
     const intro = `
     Cleaning is a time consuming task and can be very challenging for many because of the constant kneeling 
@@ -62,36 +62,46 @@ const Home = () => {
       }, []);
     
     return (
-        <div className="page-container">
-            <div className="hero-section">
-                <Hero mainMessage= {messageImporant} message={intro} picture={HeroImg} picturedesc={imgdesc} lblbtn='Get a quote'/>
-            </div>
+        <div className="page-container">   
+            <div className="content-container">
+                <div className="hero-section">
+                        <Hero mainMessage= {messageImporant} message={intro} picture={HeroImg} picturedesc={imgdesc} lblbtn='Get a quote'/>
+                </div>
+            </div>         
+            
             {/* People I work with */}
-            <div className="benefit-section">
-                <h3>Why working with us</h3>
-                {
-                    workBenefit.map((benefit) =>{
-                        return <Work 
-                        key={benefit.id}
-                        {...benefit}
-                        title={benefit.title}
-                        titleDesc={benefit.titleDesc}
-                        />
-                    })
-                }
+            <div className="content-container">
+                <div className="benefit-section">
+                    <h2>Why working with us</h2>
+                    {
+                        workBenefit.map((benefit) =>{
+                            return <Work 
+                            key={benefit.id}
+                            {...benefit}
+                            title={benefit.title}
+                            titleDesc={benefit.titleDesc}
+                            />
+                        })
+                    }
+                </div>
             </div>
             {/* Ads banner */}
             <div>
                 <Banner /> 
             </div>
             {/* FAQ section */}
-            <div className="faq-section">
-                <h3>Frequently asked questions</h3>
-                <Faq />             
+            <div className="content-container">
+                <div className="faq-section">
+                    <h2>Frequently asked questions</h2>
+                    <Faq />             
+                </div>
             </div>
             {/* Serives and Products */}
-            <div className="ads-section">
-                <Ads />
+            <div className="content-container">
+                <div className="ads-section">
+                    <h2>Cleaning checklist</h2>
+                    <Ads />
+                </div>
             </div>
              {/* Contact us Section */}
              <div className="contact-section">

@@ -7,20 +7,20 @@ const Faq = () => {
     
     const [category, setCategory] = React.useState(false)
      
-    const [isChecked, setIsChecked] = React.useState('')
+    // const [isChecked, setIsChecked] = React.useState('-')
     
 
 
     const handleCheck = (event) => {
         // let name = event.target.name;
         // let value = event.target.value;
-        let name = event.target.checked
-        setIsChecked((prevalue) => {
-          return {
-            ...prevalue,   // Spread Operator               
-            name
-          }
-        })
+        // let name = event.target.checked??
+        // setIsChecked((prevalue) => {
+        //   return {
+        //     ...prevalue,   // Spread Operator               
+        //     name
+        //   }
+        // })
       }
 
     const toggleService = () =>{    
@@ -33,6 +33,7 @@ const Faq = () => {
         }
     
     }
+
 
     const toggleCleaner = () =>{    
         if(category==='cleaner'){
@@ -253,11 +254,11 @@ const Faq = () => {
                                     onChange={handleCheck} />                            
                                 Service  
                             </label>
-                                <div onClick={toggleService}>{isChecked && category ==='service' ? '-' : '+'}</div>
+                                <div onClick={toggleService}>{ category ==='service' ? '-' : '+'}</div>
                         </div>    
                         <div className="faq-answer-container">
                         {
-                        category==='service' &&
+                        category ==='service' &&
                             faqCollection.service.map((faq) =>{
                             return (
                                 <div key={faq.answer} className="questionAnswer-wrapper">
@@ -283,7 +284,7 @@ const Faq = () => {
                                     onChange={handleCheck} />                            
                                     Cleaner                            
                                 </label>
-                                <div onClick={toggleCleaner}>{isChecked && category ==='cleaner' ? '-' : '+'}</div>
+                                <div onClick={toggleCleaner}>{category ==='cleaner' ? '-' : '+'}</div>
                         </div>
                         <div className="faq-answer-container">
                         {                           
@@ -309,7 +310,7 @@ const Faq = () => {
                                 onChange={handleCheck} />                            
                                 Booking 
                             </label>
-                            <div onClick={toggleBooking}>{isChecked && category ==='booking' ? '-' : '+'}</div>                        
+                            <div onClick={toggleBooking}>{category ==='booking' ? '-' : '+'}</div>                        
                         </div>
                         <div className="faq-answer-container">
                         {                           
@@ -337,7 +338,7 @@ const Faq = () => {
                                 onChange={handleCheck} />                            
                                 Pricing 
                             </label>
-                            <div onClick={togglePrice}>{isChecked && category ==='price' ? '-' : '+'}</div>                        
+                            <div onClick={togglePrice}>{category ==='price' ? '-' : '+'}</div>                        
                         </div>
                         <div className="faq-answer-container">
                             {                           
@@ -366,7 +367,7 @@ const Faq = () => {
                                 onChange={handleCheck} />                            
                                 Referral 
                             </label>
-                            <div onClick={toggleReferral}>{isChecked && category ==='referral' ? '-' : '+'}</div>                        
+                            <div onClick={toggleReferral}>{category ==='referral' ? '-' : '+'}</div>                        
                         </div>
                         <div className="faq-answer-container">
                             {                           

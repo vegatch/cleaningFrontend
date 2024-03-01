@@ -3,6 +3,49 @@ import  './ads.css';
 
 const Ads = () =>{
 
+    const [category, setCategory] = React.useState({standard:false, Deep:false, MoveInOut:false, PostContruction:false, AirBnB:false})
+
+    
+
+    const handleChange = e => {
+        const name = e.target.name;
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;      
+  
+        setCategory((prev) =>{
+          return { ...prev, [name]: value}
+        })      
+      }
+
+     
+      if(category.standard){
+        category.Deep = false
+        category.MoveInOut = false
+        category.AirBnB = false
+        category.PostContruction = false
+
+      }
+
+      if(category.Deep){
+        category.standard = false
+        category.MoveInOut = false
+        category.AirBnB = false
+        category.PostContruction = false
+
+      }
+
+      if(category.MoveInOut){
+        category.standard = false
+        category.Deep = false
+        category.AirBnB = false
+        category.PostContruction = false
+
+        
+      }
+
+      React.useEffect(() =>{
+        console.log(category.Deep)
+      }, [category])
+
     const standardCleaningList = [
         {
             id:1,
@@ -170,17 +213,29 @@ const Ads = () =>{
             <div className='clean-standard'>
                 <h3>Standard Cleaning</h3>
                 <p>Book now</p>
-                <div className='clean-list'>
-                    {
-                        standardCleaningList.map((list) =>{
-                            return <li key={list.id}>{list.desc}</li>
-                        })
-                    }
-                </div>
+                <label>
+                    <input type='checkbox' name='standard' onClick={handleChange}/>
+                    standard
+                </label>
+                {
+                    category.standard && 
+                    <div className='clean-list'>
+                        {
+                            standardCleaningList.map((list) =>{
+                                return <li key={list.id}>{list.desc}</li>
+                            })
+                        }
+                    </div>
+                }
             </div>
             <div className='clean-deep'>
                 <h3>Deep Cleaning</h3>
                 <p>Book now</p>
+                <label>
+                    <input type='checkbox' name='Deep' onClick={handleChange}/>
+                    Deep
+                </label>
+                {category.Deep && 
                 <div className='clean-list'>
                     {
                         deepCleaningList.map((list) =>{
@@ -188,17 +243,29 @@ const Ads = () =>{
                         })
                     }
                 </div>
+                }
+                
+    
+                    
+                
             </div>
             <div className='clean-moveInOut'>
                 <h3>Move in/Move out Cleaning</h3>
                 <p>Book now</p>
-                <div className='clean-list'>
-                    {
-                        MoveInOutCleaningList.map((list) =>{
-                            return <li key={list.id}>{list.desc}</li>
-                        })
-                    }
-                </div>
+                <label>
+                    <input type='checkbox' name='MoveInOut' onClick={handleChange}/>
+                    Move In/Move Out
+                </label>
+                {
+                    category.MoveInOut && 
+                    <div className='clean-list'>
+                        {
+                            MoveInOutCleaningList.map((list) =>{
+                                return <li key={list.id}>{list.desc}</li>
+                            })
+                        }
+                    </div>
+                }    
             </div>
 
         </div>

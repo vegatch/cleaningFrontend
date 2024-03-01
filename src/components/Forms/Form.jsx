@@ -443,15 +443,15 @@ const Booking = () =>{
           .then((res) => res.json())
           .then(async (res) => {
             const resData = await res;
-            if (resData.status === "success") {           
-              
-              setRedirect(true)
+            if (resData.status === "success") {               
+              setRedirect(true);
+              setServerError('');
             } else {
               throw new Error(`HTTP error! status: ${resData.status}`);
             }
           })
           .catch((error) => { 
-            setServerError(error)
+            setServerError(error.message='Something went wrong')
             console.log('name:', error.name, 'message:', error.message)
             console.log('server',serverError)
           })
@@ -491,9 +491,9 @@ const Booking = () =>{
                   <p> {formError.selectBedNum} </p>
                   <p> {formError.selectBathNum} </p>
                   <p> {formError.cleaningDate} </p>
-                  <p>{formError.selectCleanType}</p>
+                  <p> {formError.selectCleanType}</p>
                   <p> {formError.selectCleanTime} </p>
-                  <p>{formError.cleaningFrequency}</p> 
+                  <p> {formError.cleaningFrequency}</p> 
 
                 </div>
               <h3>Personal Information:</h3>  

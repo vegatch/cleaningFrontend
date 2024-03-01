@@ -6,16 +6,17 @@ import './banner.css';
 
 const Banner =() =>{
     return(
-        <div className="banner-container">
-            <h2> Your search for a cleaning service ends here.</h2>
-            <div>
-                <div>
-                    <Phone message='Call us today at '  className='dark' />
-                </div>
-                <div>
-                   <Path goToPage='/BookNow' labelForLink='Get quote or book online'/>
-                </div>
-            </div>
+        <div className="banner-container">           
+                <h2> Your search for a cleaning service ends here.</h2>
+                    <div>
+                        <div>
+                            <Phone message='Call us today at '  className='dark' />
+                        </div>
+                        <div>
+                        <Path goToPage='/BookNow' labelForLink='Get quote or book online'/>
+                        </div>
+                    </div>
+        
         </div>
     )
 }

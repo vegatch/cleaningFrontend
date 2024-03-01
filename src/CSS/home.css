@@ -2,32 +2,58 @@
 .contact-section{
     background-color: var(--bg-color-section);
     padding-block: 1rem;
+    margin-block: 3rem;
 }
+
+.benefit-section
+{
+    box-shadow: 0 0 .4rem var(--darkgray-line);
+    border-top-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+}
+
 
 .contact-section{
     padding-inline: .5rem;
 }
 
-.hero-section{
+/* .hero-section{
     background-color: var(--bg-color-intro);    
-}
+} */
 
-.ads-section{
+/* .ads-section{
     background-color: var(--bg-blue);
-}
+} */
 
-.benefit-section h3,
-.faq-section h3,
-.contact-section > h3{
-    text-align: center;
+.benefit-section h2,
+.faq-section h2,
+.contact-section > h2{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 800;
 }
 
 
 .form-section-header > div{
-    /* position: relative; */
     top:-1rem;
     color: var(--bg-color-intro);
     background-color: var(--bg-blue);
     width: 40%;
     padding: .01rem;
 }
+
+
+.benefit-section,
+.faq-section{
+        padding-block: 4rem;
+    }
+
+
+@media screen and (min-width:940px){   
+    
+    .benefit-section,
+    .faq-section{
+        padding: 2rem;
+    }
+        
+  }

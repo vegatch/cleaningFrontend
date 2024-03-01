@@ -1,9 +1,20 @@
 .residential > div{
-    border-top: .1rem solid darkgray;
-    padding-inline: 1rem;
+    /* border-top: .1rem solid darkgray; */
+    padding: 1rem;
 }
 
-.box-container{
-    padding-block: 2rem;
-    background-color: antiquewhite;
+
+
+.section-container{
+    box-shadow: 0.3rem 0.3rem .4rem var(--darkgray-line);
+    background-color: var(--bg-color-pages);
+    /* padding-block: .5rem; */
+    border:none;
+    outline: none;
+    border-radius: 1rem;
+}
+
+
+.why-desc-container h4{
+    font-weight: 900;
 }

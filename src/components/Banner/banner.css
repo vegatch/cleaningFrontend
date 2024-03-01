@@ -5,6 +5,17 @@
     border-top: .4rem solid var(--bg-blue);
     border-bottom: .4rem solid var(--bg-blue);
     margin-block: 2rem;
+    line-height: 2.5rem;
+}
+
+.banner-container h2{
+    font-size: 1.5rem;
+    
+}
+
+.banner-container p{
+    font-size: inherit;
+    
 }
 
 .banner-container img{
