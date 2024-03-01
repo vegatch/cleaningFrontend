@@ -1,7 +1,22 @@
-.clean-list{
+
+.cleaning-option-container .ads-btn-link {    
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: baseline;
+    background-color: var(--bg-blue);
+    padding: 1rem;
+    margin-block: 1rem;
+}
+
+.ads-btn-link button{
+    background-color: transparent;
     border: none;
-    border-top: .2rem solid var(--bg-blue);
-    padding-block: 1rem;
+    outline:none;
+    cursor: pointer;
+    color: var(--bg-color-pages);
+    font-size: 1.2rem;
+    font-weight: 800;
 }
 
 .clean-list li{
@@ -18,38 +33,49 @@
     border-radius: 50%;
     padding: .3rem;
     color: white;
-    font-weight: 900;
-    
+    font-weight: 900;    
 }
 
-.cleaning-option-container > div{
-    flex: 1;
-    border: none;
-    box-shadow: 0 0 .5rem white;
+.ads-content{
+    padding-inline: 1rem;
+}
+
+.clean-list > div{
+    width: 10rem;
+}
+
+
+.clean-list .deep{
+    font-weight: 800;
+    color: var(--bg-blue);
+}
+
+.clean-list .deep::after{
+    content: '\2713';
+    padding-left: 1rem;
+    font-weight: 800;
+}
+
+.clean-list div:nth-child(2){
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.clean-list h2:last-child{
+    background-color: var(--bg-blue);
+    color: var(--bg-color-pages);
     padding: 1rem;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    background-color: var(--bg-color-pages);
-    margin-block: 5rem;
+    margin-block: 1rem;
+    width: fit-content;
 }
 
-.cleaning-option-container input{
-    display: none;
-}
 
-.cleaning-option-container label{
-    cursor: pointer;
-    padding: 1rem;
-    border: .5rem solid var(--bg-blue);
-    margin: 5rem;
-    width: 20rem;
-    min-width: 100rem;
-    /* background-color: blue; */
-}
+/* 
 
-/* @media screen and (min-width:870px){   
+ @media screen and (min-width:870px){   
 
     
 
     
- } */
+ }  */

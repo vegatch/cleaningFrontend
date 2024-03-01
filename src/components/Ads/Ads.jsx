@@ -1,50 +1,30 @@
 import React from 'react';
+import Path from '../Path/Path.jsx'
 import  './ads.css';
 
 const Ads = () =>{
 
-    const [category, setCategory] = React.useState({standard:false, Deep:false, MoveInOut:false, PostContruction:false, AirBnB:false})
-
+    const [isStandard, setIsStandard] = React.useState(false);
+    const [isDeep, setIsDeep] = React.useState(false);
+    const [isMove, setIsMove] = React.useState(false);
     
+    const toggleStandard =() =>{
+        setIsStandard(!isStandard)
+        setIsDeep(false)
+        setIsMove(false)
+    }
 
-    const handleChange = e => {
-        const name = e.target.name;
-        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;      
-  
-        setCategory((prev) =>{
-          return { ...prev, [name]: value}
-        })      
-      }
+    const toggleDeep =() =>{
+        setIsDeep(!isDeep)
+        setIsStandard(false)
+        setIsMove(false)
+    }
 
-     
-      if(category.standard){
-        category.Deep = false
-        category.MoveInOut = false
-        category.AirBnB = false
-        category.PostContruction = false
-
-      }
-
-      if(category.Deep){
-        category.standard = false
-        category.MoveInOut = false
-        category.AirBnB = false
-        category.PostContruction = false
-
-      }
-
-      if(category.MoveInOut){
-        category.standard = false
-        category.Deep = false
-        category.AirBnB = false
-        category.PostContruction = false
-
-        
-      }
-
-      React.useEffect(() =>{
-        console.log(category.Deep)
-      }, [category])
+    const toggleMove =() =>{
+        setIsMove(!isMove)
+        setIsDeep(false)
+        setIsStandard(false)
+    }
 
     const standardCleaningList = [
         {
@@ -210,64 +190,71 @@ const Ads = () =>{
     
     return(
         <div className='cleaning-option-container'>
-            <div className='clean-standard'>
-                <h3>Standard Cleaning</h3>
-                <p>Book now</p>
-                <label>
-                    <input type='checkbox' name='standard' onClick={handleChange}/>
-                    standard
-                </label>
-                {
-                    category.standard && 
+            <div className='ads-btn-link'>
+                <button onClick={toggleStandard}>Standard</button>
+                <button onClick={toggleDeep}>Deep</button>
+                <button onClick={toggleMove}>Move In/Move out</button>
+            </div>
+
+            <div className='ads-content'>  
+                    {
+                    isStandard &&
                     <div className='clean-list'>
+                        <div>
+                            <Path goToPage='/BookNow' labelForLink='Book Now'/>
+                        </div>
                         {
                             standardCleaningList.map((list) =>{
                                 return <li key={list.id}>{list.desc}</li>
                             })
                         }
+                        
                     </div>
-                }
-            </div>
-            <div className='clean-deep'>
-                <h3>Deep Cleaning</h3>
-                <p>Book now</p>
-                <label>
-                    <input type='checkbox' name='Deep' onClick={handleChange}/>
-                    Deep
-                </label>
-                {category.Deep && 
-                <div className='clean-list'>
-                    {
-                        deepCleaningList.map((list) =>{
-                            return <li key={list.id}>{list.desc}</li>
-                        })
-                    }
-                </div>
-                }
-                
-    
                     
+                    }
                 
             </div>
-            <div className='clean-moveInOut'>
-                <h3>Move in/Move out Cleaning</h3>
-                <p>Book now</p>
-                <label>
-                    <input type='checkbox' name='MoveInOut' onClick={handleChange}/>
-                    Move In/Move Out
-                </label>
-                {
-                    category.MoveInOut && 
+            <div className='ads-content'>
+               {
+                    isDeep &&               
                     <div className='clean-list'>
+                        <div>
+                            <Path goToPage='/BookNow' labelForLink='Book Now'/>
+                            
+                        </div>
+                        <div>
+                        <h2 className='deep'>Overall best value. Recommended</h2> 
+                        {/* <p>Recommended</p> */}
+                        </div>
+
+                        {
+                            deepCleaningList.map((list) =>{
+                                return <li key={list.id}>{list.desc}</li>
+                            })
+                        }
+                        <h2> Plus all services in standard </h2>
+                    </div>
+               }
+            </div>
+            <div className='ads-content'>
+               
+               {
+                    isMove &&               
+                    <div className='clean-list'>
+                        <div>
+                            <Path goToPage='/BookNow' labelForLink='Book Now'/>
+                        </div>
                         {
                             MoveInOutCleaningList.map((list) =>{
                                 return <li key={list.id}>{list.desc}</li>
                             })
                         }
+                        <h2> Plus all services in Deep </h2>
                     </div>
-                }    
+                }
             </div>
-
+            
+             
         </div>
     )
 }

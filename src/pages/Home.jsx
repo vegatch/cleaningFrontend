@@ -98,7 +98,7 @@ const Home = () => {
             </div>
             {/* Serives and Products */}
             <div className="content-container">
-                <div className="ads-section">
+                <div className="section-ads">
                     <h2>Cleaning checklist</h2>
                     <Ads />
                 </div>
