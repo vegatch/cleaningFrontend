@@ -11,7 +11,7 @@ import DateToClean from '../utilities/DateConversion.jsx'
 
 import './form.css'
 
-const myUrl = "https://email-fhcx.onrender.com";
+const myUrl = "https://email-fhcx.onrender.com/quote";
 // const myUrl = "http://localhost:3001/quote";
 
 

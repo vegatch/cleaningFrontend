@@ -11,7 +11,7 @@ import FormValidation from '../utilities/Validation.jsx';
 // import SuccessPage from '../../pages/SuccessPage.jsx'
 import './contactUs.css';
 
-const myUrl = "https://email-fhcx.onrender.com";
+const myUrl = "https://email-fhcx.onrender.com/contact";
 // const myUrl = "http://localhost:3001/contact";
 
 // https://simplefrontend.com/redirect-to-another-page-in-react/
