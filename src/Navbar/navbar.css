@@ -19,7 +19,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 1rem;
+  padding: 1rem;
   margin: 0;
   height: auto;
   /* margin-bottom: 20rem; */
@@ -39,7 +39,8 @@ nav {
     color: black;     
   }
   nav > ul{
-    padding: 1rem;
+    padding-block: 1rem;
+    padding-left: 1rem;
   }
 
   .menu-nav{
@@ -51,8 +52,7 @@ nav {
     background: var(--bg-color-pages);  
     width: 100%;
     max-width: 100%;
-    /* font-size: 1.8rem; */
-    font-size: clamp(1rem, 10vw, 1.2rem);
+    font-size:  1.2rem;
     font-weight: bolder;
     margin-top: 2rem;
     transform: translate(-1rem);
@@ -63,7 +63,6 @@ nav {
   
   .show-menu{
     margin-top: 2.8rem;
-    /* background-color: red; */
     padding-top: 0;
   }
   
@@ -135,7 +134,7 @@ nav{
         nav .menu-nav li{
           list-style: none;
           text-decoration: none;
-          font-size: 1.6rem;
+          font-size: 1.3rem;
           font-weight: bolder;
           
         }
@@ -147,7 +146,10 @@ nav{
 
         nav .menu-nav li a:hover{
           text-decoration: underline;
-          font-size: 1.63rem;
+          font-size: 1.34rem;
+          color: var(--bg-color-pages);
+          background-color:var(--bg-blue);
+          padding: 1rem;
           
         }
 

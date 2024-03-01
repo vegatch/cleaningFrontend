@@ -11,8 +11,12 @@ import FormValidation from '../utilities/Validation.jsx';
 // import SuccessPage from '../../pages/SuccessPage.jsx'
 import './contactUs.css';
 
-const myUrl = "https://email-fhcx.onrender.com/contact";
+// const myUrl = "https://email-fhcx.onrender.com/contact";
 // const myUrl = "http://localhost:3001/contact";
+
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || "https://email-fhcx.onrender.com";
+
+const myUrl = `${API_ENDPOINT}/contact`
 
 // https://simplefrontend.com/redirect-to-another-page-in-react/
 // very helpful to redirect to successpage

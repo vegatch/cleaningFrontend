@@ -11,9 +11,11 @@ import DateToClean from '../utilities/DateConversion.jsx'
 
 import './form.css'
 
-const myUrl = "https://email-fhcx.onrender.com/quote";
+// const myUrl = "https://email-fhcx.onrender.com/quote";
 // const myUrl = "http://localhost:3001/quote";
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT || "https://email-fhcx.onrender.com";
 
+const myUrl = `${API_ENDPOINT}/quote`
 
 // const headForm = 'Get your quote or booking today';
 
