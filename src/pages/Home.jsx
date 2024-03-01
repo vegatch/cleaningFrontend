@@ -104,13 +104,13 @@ const Home = () => {
                 </div>
             </div>
              {/* Contact us Section */}
-             <div className="contact-section">
-                <h3>Still have a question? 
-                </h3>
-                <div>
-                    <ContactUS />
+             <div className="content-container">
+                <div className="contact-section">                
+                    <div>
+                        <ContactUS />
+                    </div>
                 </div>
-            </div>
+             </div>
             <div>
                 <Banner /> 
             </div>

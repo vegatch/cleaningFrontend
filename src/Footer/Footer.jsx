@@ -1,6 +1,5 @@
 import React from "react";
 import Button from '../components/Button/Button.jsx'
-// import Phone from '../components/Phone/Phone.jsx'
 import logo from '../pics/logo-white.png'
 import './footer.css'
 import { NavLink } from "react-router-dom";

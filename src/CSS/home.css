@@ -6,6 +6,7 @@
 }
 
 .benefit-section
+,.contact-section
 {
     box-shadow: 0 0 .4rem var(--darkgray-line);
     border-top-left-radius: 5rem;

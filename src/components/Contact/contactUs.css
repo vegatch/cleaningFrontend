@@ -1,6 +1,5 @@
 
 .contact_right_container{
-    /* box-shadow: .5rem .5rem var(--darkgray-line); */
     box-shadow:  0 0 .4rem var(--darkgray-line);
     margin-block: 2rem;
     box-sizing: border-box;
@@ -9,12 +8,25 @@
     border-radius: 1rem;
 }
 
+.form-container form label{
+    font-size: 1.2rem;
+}
 
-.contact_right_container input, .contact_right_container textarea{
+.form-container form input, 
+.form-container form textarea{
     display: block;
     box-sizing: border-box;
     width: 100%;
+    margin-bottom: 1.2rem;
+    margin-top: .5rem;
 }
+
+.form-container form .error{
+    font-size: 1.4rem;
+    color:red;
+}
+
+
 .contact-wrapper{
     margin-bottom: 2rem;
 }
@@ -32,11 +44,20 @@
 
 .phone-contact-wrapper{
     padding: 0;
-    /* background-color: red; */
     text-align: start;
     width: fit-content;
 }
 
+.contact_left_container h1{
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.contact_left_container  .contact-flex{
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+}
 
 
 @media screen and (min-width:870px){ 

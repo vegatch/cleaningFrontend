@@ -140,7 +140,7 @@ const ContactUs = () => {
     return(
         <div className="contact-wrapper">
             <div className="contact_left_container">
-                <h3>Let's have a conversation</h3>
+                <h1>Let's have a conversation</h1>
                 <div className="contact-flex">
                     <HiMail/> <p>Benskyallc@gmail.com</p>
                 </div>
@@ -153,16 +153,13 @@ const ContactUs = () => {
             </div>
             <div className="form-container">
               <form  onSubmit={handleSubmit} className="contact_right_container">
-                <div>
-                
+                <div className="error">                
                   {isLoading && <span> Submitting...</span>}
                   {serverError && <span>Something went wrong </span>}
                   <p className="errorDisplay"> {formError.fullname} </p>
                   <p className="errorDisplay"> {formError.email} </p>
                   <p className="errorDisplay"> {formError.phonenumber} </p>
                   <p className="errorDisplay"> {formError.message} </p>
-                
-                  {/* {formError.email && <p>{formError.email}</p>} */}
                 </div>
                   <div>
                     {/* {fetchError && <p>{fetchError}</p>} */}

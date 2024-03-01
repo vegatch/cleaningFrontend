@@ -1,12 +1,15 @@
 .section-container{
-    margin-block:2rem;
+    margin-block:2rem ;
+    border: none;
+}
+
+.faq-outer-container{
+     max-width: 840px; 
+    margin: auto;
 }
 
 
 
-/* .page-container h1{
-    text-align: center;
-} */
 
 .faq-container .faq-question{
     font-weight: bold;
