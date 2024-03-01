@@ -11,6 +11,8 @@ import FormValidation from '../utilities/Validation.jsx';
 // import SuccessPage from '../../pages/SuccessPage.jsx'
 import './contactUs.css';
 
+const myUrl = "https://email-fhcx.onrender.com";
+// const myUrl = "http://localhost:3001/contact";
 
 // https://simplefrontend.com/redirect-to-another-page-in-react/
 // very helpful to redirect to successpage
@@ -48,7 +50,7 @@ const ContactUs = () => {
       
       const handleSubmit = async (e) => {
         e.preventDefault();         
-        const myUrl = "http://localhost:3001/contact";
+        // const myUrl = "http://localhost:3001/contact";
         setFormError( FormValidation(messageState))
        console.log(formError)
        if(Object.keys(FormValidation(messageState)).length === 0){

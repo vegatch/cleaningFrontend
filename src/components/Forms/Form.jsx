@@ -11,6 +11,9 @@ import DateToClean from '../utilities/DateConversion.jsx'
 
 import './form.css'
 
+const myUrl = "https://email-fhcx.onrender.com";
+// const myUrl = "http://localhost:3001/quote";
+
 
 // const headForm = 'Get your quote or booking today';
 
@@ -423,7 +426,7 @@ const Booking = () =>{
       const handleSubmit = async (e) =>{
         e.preventDefault()
         
-        const myUrl = "http://localhost:3001/quote";
+        // const myUrl = "http://localhost:3001/quote";
         setFormError(formValidation())
         if(Object.keys(formValidation()).length === 0){       
            
