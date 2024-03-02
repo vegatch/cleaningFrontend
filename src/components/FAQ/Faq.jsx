@@ -139,7 +139,7 @@ const Faq = () => {
                 "question":`Who are your cleaners?`,
                 "answer": `
                 Benskya's cleaners are professional cleaners with extensive experience. 
-                Every cleaner is hand pick selected after result of their background
+                Every cleaner is hand picked after result of their background
                 `
             },
             {
@@ -243,7 +243,7 @@ const Faq = () => {
           }, [category]);
 
     return (
-        <div className="section-container">  
+        <div className="sectionContainer">  
             <div className="faq-outer-container">
                 <div className="faq-wrapper">
                     

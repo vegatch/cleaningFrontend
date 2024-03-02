@@ -18,7 +18,7 @@ const Home = () => {
     const intro = `
     Cleaning is a time consuming task and can be very challenging for many because of the constant kneeling 
     and bending. Cleaning can also put a massive pressure on your joints and your back. Get your life and 
-    freedom back. Let's Benskya do this strenous job for you.
+    freedom back. Let's Benskya do this strenuous job for you.
     `
     
     const imgdesc = 'cleaning picture'
@@ -30,7 +30,7 @@ const Home = () => {
             titleDesc:`
             Cleaning is a time-consuming task that requires significant effort and time
             which you don't have. Stop stressing yourself out, leave the cleaning to us 
-            and enjoy and healthier environment. 
+            and enjoy a healthier environment. 
             `,
 
         },
@@ -48,9 +48,9 @@ const Home = () => {
             id:3,
             title:'Always available for you',
             titleDesc:`
-            Conscious that the need for a clean can arise at anytime
-            Benskya make sure is always have a staff available to help
-            you with you cleaning need.
+            Conscious that the need for a clean can arise at anytime,
+            Benskya will make sure to always have  staff available to help
+            you with your cleaning need.
             `,
 
         },
@@ -72,7 +72,7 @@ const Home = () => {
             {/* People I work with */}
             <div className="content-container">
                 <div className="benefit-section">
-                    <h2>Why working with us</h2>
+                    <h2>Why work with us?</h2>
                     {
                         workBenefit.map((benefit) =>{
                             return <Work 

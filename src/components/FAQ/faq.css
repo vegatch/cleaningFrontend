@@ -1,7 +1,7 @@
-.section-container{
+/* .section-container{
     margin-block:2rem ;
     border: none;
-}
+} */
 
 .faq-outer-container{
      max-width: 840px; 
@@ -90,8 +90,6 @@
 
 .faq-answer-container{
     padding-inline: 1rem;
-    /* border-left: .01rem solid darkgray;
-    border-right: .01rem solid darkgray; */
     margin: 0;
 
 }
@@ -102,7 +100,6 @@
     margin: 2rem auto;
     width: 100%;
     border: .01rem solid darkgray;
-    /* box-shadow:  0 0 .4rem var(--darkgray-line); */
     padding-block: 2rem;
     border-radius: 1rem;
 }

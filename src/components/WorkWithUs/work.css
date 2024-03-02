@@ -8,10 +8,11 @@
 .section-container{
     box-shadow: 0.3rem 0.3rem .4rem var(--darkgray-line);
     background-color: var(--bg-color-pages);
-    /* padding-block: .5rem; */
     border:none;
     outline: none;
     border-radius: 1rem;
+    margin-block:2rem ;
+    
 }
 
 
