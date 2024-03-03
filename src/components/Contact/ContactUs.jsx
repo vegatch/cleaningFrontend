@@ -138,7 +138,7 @@ const ContactUs = () => {
           }
     ]
     return(
-        <div className="contact-wrapper">
+        <div className="contact-component-container">
             <div className="contact_left_container">
                 <h1>Let's have a conversation</h1>
                 <div className="contact-flex">
@@ -151,8 +151,9 @@ const ContactUs = () => {
                     <ImLocation/> <p>Indianapolis, IN</p>
                 </div>
             </div>
-            <div className="form-container">
-              <form  onSubmit={handleSubmit} className="contact_right_container">
+            <div className="contact_right_container">
+            <div>
+              <form  onSubmit={handleSubmit} className="contact-form-container">
                 <div className="error">                
                   {isLoading && <span> Submitting...</span>}
                   {serverError && <span>Something went wrong </span>}
@@ -162,7 +163,6 @@ const ContactUs = () => {
                   <p className="errorDisplay"> {formError.message} </p>
                 </div>
                   <div>
-                    {/* {fetchError && <p>{fetchError}</p>} */}
                       {contactArray.slice(0,-1).map((input) => (
                           <Input
                           key={input.id}
@@ -172,7 +172,6 @@ const ContactUs = () => {
                           onChange={handleFormChange}
                           maxLength={input.maxLength}
                           minLength={input.minLength}
-                          // onBlur={handleValidation} 
                           
                           />                        
                       ))}
@@ -192,11 +191,15 @@ const ContactUs = () => {
                   <Button className='main-btn'   onClick ={handleSubmit} label='Send us your message'/>
                   {/* <button className='main-btn'>send</button> */}
               </form>
+              </div>
+              <div>
               {
                 redirect ? (
                     <Navigate replace to="/SuccessPage" />
                   ) : null
               }
+              </div>
+              
             </div>
         </div>
     )

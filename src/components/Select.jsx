@@ -16,8 +16,7 @@ const SelectItem = ({
 }) => (
   <div className="select-wrapper">
     
-    <label>
-      {label}
+    <label htmlFor={id}> {label} </label>
       <select id={id} name={name} onChange={onChange} required={required}>
         <option value='' hidden> Select an option</option>
         {options.map(option => (
@@ -26,7 +25,7 @@ const SelectItem = ({
           </option>
         ))}
       </select>
-    </label>
+    
   </div>
 );
 

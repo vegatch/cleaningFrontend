@@ -120,13 +120,13 @@ const Footer = () => {
                     <div className="logo-container_footer">
                         <img src={logo} alt="logo" />
                     </div>
-                    <div>
-                        <h4>Let's connect</h4>
+                    <div className="bottom-left-container">
+                        <p>Let's connect</p>
                         <div>{footerContent}</div>
                         <Button className='.main-btn' label='Schedule your clean today'/>
                     </div>
                 </div>
-                <div className="navAndSerive">
+                <div className="navAndSerive right-top">
                     <ul>
                         <p className="btn-toggle" onClick={toggleNav} >Navigation</p>
                     
@@ -155,7 +155,7 @@ const Footer = () => {
                                         onClick={toggleNav}
                                         className={footerList.className} 
                                     >
-                                        <div>
+                                        <div className="support-flex">
                                             <p> {footerList.path}</p>  
                                             <p>{footerList.myUrl}</p>  
                                         </div>
@@ -182,52 +182,11 @@ const Footer = () => {
                                 )
                             })
                         }
-                    </ul>
+            </ul>
             </div>            
         </footer>
         
-        // <div className="footer-container">
-        //     <div className="element-container">
-        //         <div className="grid-a">
-        //             <div className="logo-container">
-        //                 <img src={logo} alt="logo" />
-        //             </div>
-        //             <div>
-        //                 <h4>Let's connect</h4>
-        //                 <div>{footerContent}</div>
-        //                 <Button className='.main-btn' label='Schedule your clean today'/>
-        //             </div>
-        //         </div>
-        //         <div className="grid-b">
-        //             <h4>Navigation</h4>
-        //             <p>Home</p>
-        //             <p>Service</p>
-        //             <p>Book now</p>
-        //             <p>Faq</p>
-        //             <p>Contact us</p>
-        //         </div>
-        //         <div className="grid-c">
-        //             <h4>Let's talks</h4>
-        //             <div>
-        //                 <p>Phone: <Phone /></p> 
-        //             </div>
-        //             <div>
-        //                 <p>Email: benskyallc@gmail.com</p>
-        //             </div>
-        //         </div>
-        //     </div>
-        //     <div className="bottom-element">
-        //         <div className="footer-legal">
-        //             <p>Terms & conditions</p>
-        //             <p>Policy</p>
-        //             <p>Copyright</p>
-        //         </div>
-        //         <div className="footer-social">
-        //         <p>Facebook</p>
-        //         <p>LinkedIn</p>
-        //         </div>
-        //     </div>
-        // </div>
+        
     )
 }
 

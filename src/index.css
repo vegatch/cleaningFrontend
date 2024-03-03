@@ -33,11 +33,11 @@ body{
 #btn-background,
 footer{
   background-color: var(--bg-blue);
-  /* background-color: var( --bg-color-pages); */
+  
 }
 
 .page-container{
-  padding-inline: 1rem;
+  padding-block: .5rem;
 }
 
 .section-container{
@@ -75,6 +75,11 @@ height: auto;
 @media screen and (min-width:940px){   
   .content-container{
     max-width: 900px;
+    margin: 0 auto;
+  }
+  page-container{
+    padding-block: 1rem;
+    max-width: 1300px;
     margin: 0 auto;
   }
   

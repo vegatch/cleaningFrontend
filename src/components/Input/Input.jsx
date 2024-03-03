@@ -1,6 +1,6 @@
 import React  from "react";
 // import handleValidation from '../utilities/Validation.jsx'
-import './input.css'
+// import './input.css'
 
 const Input = ({ id, label, onChange, type, required, ...inputProps }) => {
   const [focused, setFocused] = React.useState(false);
@@ -11,7 +11,7 @@ const Input = ({ id, label, onChange, type, required, ...inputProps }) => {
 
   return (
     <div className="form-input">
-      <label>{label}
+      <label htmlFor={id}>{label}</label>
       <input
         {...inputProps}
         required={required}
@@ -23,7 +23,7 @@ const Input = ({ id, label, onChange, type, required, ...inputProps }) => {
       />
       {/* <p>{errMsg}</p> */}
       {/* <span className="error-message">{errorMsg}</span> */}
-      </label>
+      
     </div>
   );
 };

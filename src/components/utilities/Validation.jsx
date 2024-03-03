@@ -32,8 +32,12 @@ const FormValidation = (formState) =>{
         validationError.message ='Message is required'
         
     }
-    if( formState.message.length > 300 || formState.message.length > 10){
-        validationError.message =' message should be between 10 and 300 long'
+    if( formState.message.length > 300 ){
+        validationError.message =' message should be less than 300 characters'
+        
+    }
+    if( formState.message.length < 11 ){
+        validationError.message =' message should be at least 10 characters long'
         
     }
 

@@ -1,18 +1,18 @@
-.form-input {
+/* .form-input {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
   
   .form-input textarea {
-    /* transition: 0.3s all ease;
+     transition: 0.3s all ease;
     background-color: transparent;
     color: #111;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border: 1px solid #cccccc;
-    padding: 10px; */
+    padding: 10px; 
     border-radius: 10px;
     padding: 10px;
     resize: none;
@@ -40,4 +40,4 @@
   
   textarea:invalid[focused="true"] {
     border: 1px solid #ff0000;
-  }
+  } */

@@ -3,7 +3,7 @@ import './work.css'
 
 const Work = ({title, titleDesc}) =>{
     return(
-        <div className="section-container">
+        <div className="work-container">
             <div className="residential">
                     <div className="why-desc-container"> 
                         <h4>
