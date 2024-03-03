@@ -2,20 +2,31 @@
 
 .booking-page{
     margin: 0 auto;
-    max-width: 80%;
-}
-
-.header-booking{
-    background-color: navy;
-    padding-block: 8rem;
-    color: white;
-    
 
 }
 
-.booking-page-left
-,.booking-page-right{
-    margin-block: 2rem;
+.booking-header{
+    background-color: var(--bg-blue);
+    padding-block: 10rem;
+    padding-inline: 2rem;
+}
+
+
+.booking-header h1{
+    text-align: center;
+    color: var(--bg-color-pages);
+    font-size: 2.2rem;
+}
+
+
+.booking-page-left 
+.booking-page-right
+{
+    margin-block: 4rem;
+}
+
+.booking-page-right{
+    display: none;
 }
 
 .booking-page-left form{
@@ -24,8 +35,13 @@
     box-shadow:  0 0 .4rem var(--darkgray-line);
     padding: 1rem 1.5rem;
     border-radius: 1rem;
-    
-    
+}
+
+.booking-page-left form
+,.booking-page-right .booking-page-right-container
+{
+    border: .1rem solid var(--darkgray-line);
+    box-shadow:  0 0 .4rem var(--darkgray-line);    
 }
 
 form section{
@@ -76,23 +92,47 @@ form section h3{
 
 
 
+.cleaning-detail p{
+    margin-top: 1rem;
+}
+
 @media screen and (min-width:940px){
     
-    .booking-page{
+    .booking-body{
         display: flex;
-        gap: 1rem;
+        gap: .6rem;
         justify-content: space-between;
     }
+    .booking-page-right{
+        display: block;
+    }
 
+    .booking-body{
+        max-width:85% ;
+        margin: auto;
+    }
     .booking-page-left
     ,.booking-page-right{
         flex: 1;
     }
 
+    
+    
     .booking-page-left form
-    ,.booking-page-right div
+    ,.booking-page-right .booking-page-right-container
     {
         background-color: white;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        padding: 2rem 1rem;
+        align-self: stretch;
+        
+    }
+
+    .booking-page-right .booking-page-right-container{
+        background-color: white;
+        
+    
     }
     .booking-page-left 
     ,.booking-page-right

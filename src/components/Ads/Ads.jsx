@@ -1,5 +1,5 @@
 import React from 'react';
-import Path from '../Path/Path.jsx'
+// import Path from '../Path/Path.jsx'
 import  './ads.css';
 
 const Ads = () =>{
@@ -186,23 +186,21 @@ const Ads = () =>{
         },
         
     ]
-        
+    
     
     return(
         <div className='cleaning-option-container'>
             <div className='ads-btn-link'>
-                <button onClick={toggleStandard}>Standard</button>
-                <button onClick={toggleDeep}>Deep</button>
-                <button onClick={toggleMove}>Move In/Move out</button>
+                <button onClick={toggleStandard } className={`btn ${isStandard ? 'btn-blue' : 'btn-page'}`}>Standard</button>
+                <button onClick={toggleDeep} className={`btn ${isDeep ? ' btn-blue' : 'btn-page'}`} >Deep </button>
+                <button onClick={toggleMove} className={`btn ${isMove ? ' btn-blue' : 'btn-page'}`} >Move In/Move out</button>
             </div>
 
             <div className='ads-content'>  
                     {
                     isStandard &&
                     <div className='clean-list'>
-                        <div>
-                            <Path goToPage='/BookNow' labelForLink='Book Now'/>
-                        </div>
+                        
                         {
                             standardCleaningList.map((list) =>{
                                 return <li key={list.id}>{list.desc}</li>
@@ -218,15 +216,7 @@ const Ads = () =>{
                {
                     isDeep &&               
                     <div className='clean-list'>
-                        <div>
-                            <Path goToPage='/BookNow' labelForLink='Book Now'/>
-                            
-                        </div>
-                        <div>
-                        <h2 className='deep'>Overall best value. Recommended</h2> 
-                        {/* <p>Recommended</p> */}
-                        </div>
-
+                       
                         {
                             deepCleaningList.map((list) =>{
                                 return <li key={list.id}>{list.desc}</li>
@@ -241,9 +231,7 @@ const Ads = () =>{
                {
                     isMove &&               
                     <div className='clean-list'>
-                        <div>
-                            <Path goToPage='/BookNow' labelForLink='Book Now'/>
-                        </div>
+                        
                         {
                             MoveInOutCleaningList.map((list) =>{
                                 return <li key={list.id}>{list.desc}</li>

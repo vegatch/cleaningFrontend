@@ -9,15 +9,14 @@
     border-bottom-right-radius: 5rem;
 }
 
+.benefit-section{
+    padding-inline: 1.5rem;
+    margin-block: 2rem;
+}
 
-/* .contact-section{
-    padding-inline: .5rem;
-} */
-
-/* .hero-section{
-    background-color: var(--bg-color-intro);    
-} */
-
+.content-container{
+    padding-inline: 1rem;
+}
 
  .section-ads h2{
     font-size: 1.4rem;

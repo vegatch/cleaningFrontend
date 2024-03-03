@@ -6,9 +6,7 @@ import '../components/Forms/form.css'
 const Booking = () => {
     return (
         <div className="page-container">
-            <div className="header-booking">
-                <h1> Book me now</h1>
-            </div>            
+                   
             <Form />
         </div>
         
