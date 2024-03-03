@@ -1,0 +1,12 @@
+.contact-header-container{
+    background-color: var(--bg-blue);
+    padding-block: 10rem;
+    padding-inline: 2rem;
+    /* margin-bottom: 2rem; */
+}
+
+.contact-header-container h1{
+    font-size: 2.2rem;
+    color: var(--bg-color-pages);
+    text-align: center;
+}

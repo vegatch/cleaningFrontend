@@ -1,18 +1,11 @@
-.faq-page-container h2{
-    text-align: center;
-    /* font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: bol; */
-}
-
-.faq-header-container{
+.service-header-container{
     background-color: var(--bg-blue);
     padding-block: 10rem;
     padding-inline: 2rem;
     margin-bottom: 2rem;
 }
 
-.faq-header-container h1{
+.service-header-container h1{
     font-size: 2.2rem;
     color: var(--bg-color-pages);
     text-align: center;

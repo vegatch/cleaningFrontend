@@ -4,8 +4,9 @@
 } */
 
 .faq-outer-container{
-     max-width: 840px; 
+    max-width: 760px; 
     margin: auto;
+    margin-top: 2rem;
 }
 
 
@@ -131,6 +132,7 @@
 .faq-answer-container{
     background-color: var(--bg-color-section);
     transition: height 2s;
+    
 }
 
 .questionAnswer-wrapper li{

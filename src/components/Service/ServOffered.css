@@ -1,0 +1,22 @@
+.service-wrapper{
+    padding: 2rem;
+}
+
+.service-wrapper h2{
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: .3rem;
+}
+
+.service-wrapper p{
+    font-size: 1.1rem;
+    line-height: 2rem;
+    
+}
+
+
+
+.service-main-container{
+    max-width: 760px;
+    margin: auto;
+}

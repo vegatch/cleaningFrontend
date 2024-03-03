@@ -59,8 +59,7 @@ const { pathname } = useLocation();
     ]
     return(
         <header>
-            <div className="top-nav">    
-                            
+            <div className="top-nav">                           
                 <div>
                      <Phone className='light' message='Call us now at ' />
                 </div>

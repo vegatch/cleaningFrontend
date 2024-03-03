@@ -7,7 +7,9 @@ const Faq = () =>{
     return (
         <div className="page-container">
             <div className="faq-page-container">
-                <h2>Frequently asked questions</h2>
+                <div className="faq-header-container">
+                    <h1>Frequently asked questions</h1>
+                </div>
                 <div>
                     <Qanswer />
                 </div>

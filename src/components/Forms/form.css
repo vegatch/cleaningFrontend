@@ -130,10 +130,23 @@ form section h3{
     }
 
     .booking-page-right .booking-page-right-container{
-        background-color: white;
-        
+        background-color: white;       
     
     }
+
+    .booking-page-right-container p{
+        font-size:1.2rem;        
+        padding-block:1rem;
+    }
+
+
+    .booking-page-right-container p:nth-child(2){
+        font-weight: 900;
+        font-size: 1.4rem;
+        text-align: center;
+        padding-block: 10ren;
+    }
+
     .booking-page-left 
     ,.booking-page-right
     {

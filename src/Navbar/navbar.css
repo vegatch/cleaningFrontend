@@ -127,10 +127,12 @@ nav {
          align-items: center;
          justify-content: space-between;
         }
-nav{
-  padding: 1rem;
+        
+        nav{
+            padding: 1rem;
   
-}
+        }
+
         nav .menu-nav li{
           list-style: none;
           text-decoration: none;
@@ -146,7 +148,6 @@ nav{
 
         nav .menu-nav li a:hover{
           text-decoration: underline;
-          font-size: 1.34rem;
           color: var(--bg-color-pages);
           background-color:var(--bg-blue);
           padding: 1rem;

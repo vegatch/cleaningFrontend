@@ -1,6 +1,6 @@
  .contact-component-container{
-    margin: 2rem;
-    padding-block: 2rem;
+    margin: 2rem 1rem;
+    padding-block: 2.4rem;
 }
 
 
@@ -27,7 +27,6 @@
 }
 
 .contact-form-container .error{
-    /* font-size: 1.4rem; */
     color:red;
 }
  
