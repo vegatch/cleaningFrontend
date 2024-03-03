@@ -62,7 +62,7 @@ const { pathname } = useLocation();
             <div className="top-nav">    
                             
                 <div>
-                     <Phone className='light' message='Call us now  ' />
+                     <Phone className='light' message='Call us now at ' />
                 </div>
             </div>
             <div className="logoAndNav-container">

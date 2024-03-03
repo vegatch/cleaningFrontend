@@ -1,6 +1,7 @@
 import React from "react";
 import Button from '../components/Button/Button.jsx'
 import logo from '../pics/logo-white.png'
+import Phone from "../components/Phone/Phone.jsx";
 import './footer.css'
 import { NavLink } from "react-router-dom";
 
@@ -71,7 +72,7 @@ const Footer = () => {
             {
                 id: 1,
                 path: 'Phone number: ',
-                myUrl:'786-247-2127',
+                myUrl:'561-768-3760',
                 className:'nav-footer'
             },
             {
@@ -116,22 +117,22 @@ const Footer = () => {
         
         <footer>
             <div className="footer-top">
-                <div className="left-top">
-                    <div className="logo-container_footer">
-                        <img src={logo} alt="logo" />
-                    </div>
-                    <div className="bottom-left-container">
-                        <p>Let's connect</p>
-                        <div>{footerContent}</div>
-                        <Button className='.main-btn' label='Schedule your clean today'/>
-                    </div>
-                </div>
-                <div className="navAndSerive right-top">
-                    <ul>
+                <div className="footer-left">
+                        <div className="logo-container_footer">
+                            <img src={logo} alt="logo" />
+                        </div>
+                        <div className="bottom-left-container">
+                            <p>Let's connect</p>
+                            <p>{footerContent}</p>
+                            <Button className='.main-btn' label='Get a quote'/>
+                        </div>
+                </div>   
+                <div className="footer-navigation">
+                     <ul>
                         <p className="btn-toggle" onClick={toggleNav} >Navigation</p>
                     
                         {
-                            category ==='Navigation' &&
+                            // category ==='Navigation' &&
                             navFooter.Navigation.map((footerList) =>{
                                 return(
                                     <li key={footerList.id} ><NavLink
@@ -145,31 +146,11 @@ const Footer = () => {
                             })
                         }
                     </ul>
-                    <ul> <p className="btn-toggle" onClick={toggleSupport} >Talk to us</p>
-                        {
-                            category ==='Support' &&
-                            navFooter.Support.map((footerList) =>{
-                                return(
-                                    <li key={footerList.id} ><NavLink
-                                        end to={footerList.path} 
-                                        onClick={toggleNav}
-                                        className={footerList.className} 
-                                    >
-                                        <div className="support-flex">
-                                            <p> {footerList.path}</p>  
-                                            <p>{footerList.myUrl}</p>  
-                                        </div>
-                                    </NavLink></li>
-                                )
-                            })
-                        }
-                    </ul>
                 </div>
-            </div>
-            <div className="footer-bottom">
-            <ul> <p className="btn-toggle" onClick={togglePrivacy} >Terms</p>
+                <div className="footer-termes">
+                    <ul> <p className="btn-toggle" onClick={togglePrivacy} >Terms</p>
                         {
-                            category ==='Privacy' &&
+                            // category ==='Privacy' &&
                             navFooter.Privacy.map((footerList) =>{
                                 return(
                                     <li key={footerList.id} ><NavLink
@@ -182,8 +163,34 @@ const Footer = () => {
                                 )
                             })
                         }
-            </ul>
-            </div>            
+                    </ul>
+                </div>
+                <div className="footer-contact">
+                    <ul> <p className="btn-toggle" onClick={toggleSupport} >Talk to us</p>
+                        {
+                            // category ==='Support' &&
+                            navFooter.Support.map((footerList) =>{
+                                return(
+                                    <li key={footerList.id} ><NavLink
+                                        end to={footerList.path} 
+                                        onClick={toggleNav}
+                                        className={footerList.className} 
+                                    >
+                                        <div className="support-flex">
+                                            <div> {footerList.path}</div>  
+                                            <div>{footerList.myUrl}</div>  
+                                        </div>
+                                    </NavLink></li>
+                                )
+                            })
+                        }
+                    </ul>
+
+                </div> 
+            </div>
+            <div className="footer-bottom">
+                 <Phone className='light' message='Call us now at ' />
+            </div>
         </footer>
         
         
