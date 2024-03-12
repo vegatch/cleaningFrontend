@@ -56,18 +56,19 @@ form section h3{
 }
 
 
+
 .booking-page-left form input[type='text']
 ,.booking-page-left form input[type='email']
 ,.booking-page-left form input[type='date']
 ,.booking-page-left form input[type='number']
 ,.booking-page-left form select{
     width: 100%;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     margin-top: .4rem;
-    padding: 1rem;
+    padding: .4rem;
     border: none;
     outline: none;
-    box-shadow: 0 0 .2rem  navy;
+    box-shadow: 0 0 .1rem  navy;
     border-radius: .5rem;
 }
 

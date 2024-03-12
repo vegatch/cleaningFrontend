@@ -14,7 +14,7 @@ const SelectItem = ({
 
   label,
 }) => (
-  <div className="select-wrapper">
+  <div className="field-container">
     
     <label htmlFor={id}> {label} </label>
       <select id={id} name={name} onChange={onChange} required={required}>

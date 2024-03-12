@@ -1,6 +1,6 @@
 import React from "react";
 import ServiceComponent from '../components/Service/Service.jsx'
-// import cleaner from '../pics/barbara.png'
+// import Form from '../components/Forms/FormEx.jsx'
 import Banner from '../components/Banner/Banner.jsx'
 import '../CSS/service.css'
 
@@ -15,6 +15,8 @@ const Service = () => {
             <ServiceComponent />
             
              <Banner /> 
+
+             {/* <Form /> */}
             
 
         </div>

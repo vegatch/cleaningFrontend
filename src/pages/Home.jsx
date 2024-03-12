@@ -5,7 +5,7 @@ import Ads from '../components/Ads/Ads.jsx'
 import Work from '../components/WorkWithUs/WorkWithUs.jsx'
 import Faq from '../components/FAQ/Faq.jsx'
 import ContactUS from '../components/Contact/ContactUs.jsx'
-import HeroImg from '../pics/sita.png'
+import HeroImg from '../pics/caddy.png'
 import '../CSS/home.css'
 // import { useEffect } from 'react';
 

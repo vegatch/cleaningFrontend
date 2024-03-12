@@ -1,56 +1,47 @@
-import React  from "react";
-// import handleValidation from '../utilities/Validation.jsx'
-// import './input.css'
+// import { useEffect } from 'react';
+import React from 'react';
+import './input.css';
 
-const Input = ({ id, label, onChange, type, required, ...inputProps }) => {
-  const [focused, setFocused] = React.useState(false);
 
-  const handleFocused = () => {
-    setFocused(true);
-  };
+const Input = ({
+  error,
+  name,
+  type,
+  label,
+  value,
+  onChange,
+  onBlur,
+  fieldCurrent,
 
-  return (
-    <div className="form-input">
-      <label htmlFor={id}>{label}</label>
-      <input
-        {...inputProps}
-        required={required}
-        type={type}
-        onChange={onChange}
-        onBlur={handleFocused}
-        focused={focused.toString()}
-        onFocus={() => inputProps.name === "message" && setFocused(true)}
-      />
-      {/* <p>{errMsg}</p> */}
-      {/* <span className="error-message">{errorMsg}</span> */}
-      
-    </div>
-  );
-};
+}) =>{
+
+  // const [currentField, setCurrentField] = React.useState(false);
+
+  const handleFocus = (e) => {
+    return error = ''
+  }
+
+  
+
+  
+  return(
+      <div className="field-container">
+          <label>
+              {label}
+              <input 
+                  type={type}
+                  name = {name}
+                  value = {value}
+                  min= {new Date().toISOString().split('T')[0]}
+                  onChange = {onChange}
+                  onBlur={onBlur}
+                  onFocus = {handleFocus}
+                  autoComplete="off"
+              />
+          </label>
+          { fieldCurrent === name && <p>{error}</p>}
+      </div>
+  )
+}
 
 export default Input;
-
-
-// import React from "react";
-// import './input.css'
-
-// const Input = ({label, type, pattern, errorMessage,  onBlur, onChange, id, placeholder, maxLength}) => {
-//     return(
-//       <div className="input-container">
-//         <label htmlFor={id}>
-//           {label}
-//           <input 
-//             type={type}
-//             onChange={onChange}
-//             placeholder={placeholder}
-//             pattern={pattern}
-//             maxLength={maxLength}
-//             onBlur={onBlur}
-//           />
-//         </label>
-//         <span> {errorMessage} </span>
-//       </div>
-//     )
-//   }
-  
-//   export default Input;
