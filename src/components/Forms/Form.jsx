@@ -75,6 +75,7 @@ const Booking = () =>{
     const [formError, setFormError] = React.useState(initialState);
     const [redirect, setRedirect] = React.useState(false);
     const [serverError, setServerError] = React.useState(false);
+    const [isTransmitting, setIsTransmitting] = React.useState(false);
 
     const personalArray = [
         {
@@ -256,7 +257,8 @@ const Booking = () =>{
     let validName = /^[a-zA-Z].*/
     const validEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ ;
     const phoneFormat = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
-    const currentDate = new Date().getTime();;
+    const currentDate = new Date().getTime();
+    let myCleanDate = new Date(formData.cleaningDate).getTime();
     
     
     if (formData.firstname === "") {
@@ -344,7 +346,7 @@ const Booking = () =>{
     if (formData.cleaningDate ==='') {
       validationError.cleaningDate ='Cleaning date is required'
       formValid = false
-    }else if(formData.cleaningDate < currentDate){
+    }else if(myCleanDate < currentDate){
       validationError.cleaningDate ='Cleaning date can\'t be prior to current date'
       formValid = false
     }
@@ -483,7 +485,7 @@ const Booking = () =>{
           e.preventDefault()
         if(formValidation()){   
            
-          
+          setIsTransmitting(true);
      // -----------START------------------
 
         await fetch(myUrl, {
@@ -500,17 +502,21 @@ const Booking = () =>{
             if (resData.status === "success") {               
               setRedirect(true);
               setServerError('');
+              setIsTransmitting(false);
             } else {
               throw new Error(`HTTP error! status: ${resData.status}`);
+              // setIsTransmitting(false);
             }
           })
           .catch((error) => { 
             setServerError(error.message='Something went wrong')
+            // setIsTransmitting(false);
             // console.log('name:', error.name, 'message:', error.message)
             // console.log('server',serverError)
           })
           .finally(() => {
             console.log(initialState);
+            setIsTransmitting(false);
           })
 
         // -----------END------------------
@@ -518,6 +524,7 @@ const Booking = () =>{
           e.preventDefault();
           setSubmitPress(true)
           scrollTop();
+          setIsTransmitting(false);
         }
         
       }
@@ -758,8 +765,7 @@ const Booking = () =>{
                             onBlur={formValidation}              
                             onChange={handleFormChange}
                             fieldError = {currentError}
-                            fieldCurrent = {touched}         
-                      
+                            fieldCurrent = {touched}    
                       
                     />
                             ))
@@ -788,7 +794,7 @@ const Booking = () =>{
                   </section>
             
                 <div>
-                <button disabled={!formValidation}>Submit</button>             
+                <button disabled={!formValidation}>{isTransmitting ? "Submitting..." : "Submit"}</button>             
                 </div>
              </form>
                 {
