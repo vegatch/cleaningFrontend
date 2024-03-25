@@ -91,7 +91,10 @@ form section h3{
     color: red;
 }
 
-
+form button{
+    cursor: pointer;
+    font-size:1.1rem;
+}
 
 .cleaning-detail p{
     margin-top: 1rem;

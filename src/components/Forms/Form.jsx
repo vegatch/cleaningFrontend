@@ -9,7 +9,6 @@ import Ads from '../Ads/Ads.jsx'
 import Quote from '../utilities/Quote.jsx';
 import quoteId from '../utilities/IgGenerator.jsx'
 import DateToClean from '../utilities/DateConversion.jsx'
-// import FormValidation from "../utilities/FormValidation.jsx";
 
 import './form.css'
 
@@ -248,6 +247,8 @@ const Booking = () =>{
 
   const [currentError, setCurrentError] = React.useState();
   const [touched, setTouched] = React.useState();
+  const [submitPress, setSubmitPress] = React.useState(false);
+
   const formValidation = () => {
     let validationError = {}
     let formValid = true
@@ -255,6 +256,7 @@ const Booking = () =>{
     let validName = /^[a-zA-Z].*/
     const validEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/ ;
     const phoneFormat = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    const currentDate = new Date().getTime();;
     
     
     if (formData.firstname === "") {
@@ -290,6 +292,9 @@ const Booking = () =>{
       formValid = false          
     }else if(!phoneFormat.test(formData.phonenumber)){
       validationError.phonenumber =' Format 000-000-0000 expected'
+      formValid = false  
+    }else if(formData.phonenumber.startsWith('1')){
+      validationError.phonenumber =' Phone number is incorrect'
       formValid = false  
     }
 
@@ -339,6 +344,9 @@ const Booking = () =>{
     if (formData.cleaningDate ==='') {
       validationError.cleaningDate ='Cleaning date is required'
       formValid = false
+    }else if(formData.cleaningDate > currentDate){
+      validationError.cleaningDate ='Cleaning date can\'t be prior to current date'
+      formValid = false
     }
 
     if (formData.selectCleanTime ==='') {
@@ -384,7 +392,7 @@ const Booking = () =>{
 
      
       let phoneFormat = /\d{3}-\d{3}-\d{4}/
-      if(phoneConverter().match(phoneFormat)){
+      if(phoneConverter(formData.phonenumber).match(phoneFormat)){
         formData.phonenumber = phoneConverter()
       }
      
@@ -508,6 +516,7 @@ const Booking = () =>{
         // -----------END------------------
         }else{
           e.preventDefault();
+          setSubmitPress(true)
           scrollTop();
         }
         
@@ -524,12 +533,28 @@ const Booking = () =>{
           <div className="booking-page-left">
               
               <form noValidate onSubmit={handleSubmit}>
-               
+               {
+                submitPress && 
                   <div className="errorContainer">
                   {serverError.message && <p>{serverError.message}</p>}
+                  <p> {formError.firstname} </p>
+                  <p> {formError.middlename} </p>
+                  <p> {formError.lastname} </p>
+                  <p> {formError.email} </p>
+                  <p> {formError.phonenumber} </p>
+                  <p> {formError.streetAddress} </p>
+                  <p> {formError.city} </p>
+                  <p> {formError.zipcode} </p>
+                  <p> {formError.selectBedNum} </p>
+                  <p> {formError.selectBathNum} </p>
+                  <p> {formError.cleaningDate} </p>
+                  <p>{formError.selectCleanType}</p>
+                  <p> {formError.selectCleanTime} </p>
+                  <p>{formError.cleaningFrequency}</p>
                     
   
                   </div>
+               }
                   <section className="personal-info">
                       <h3>Personal Information:</h3>  
                       <div>
@@ -568,11 +593,14 @@ const Booking = () =>{
                       name='selectBedNum'
                       id='selectBedNum'
                       required={true}
-                      onChange={handleFormChange}        
+                      onChange={handleFormChange}         
+                          
+                      error={formError.selectBedNum}  
+                      fieldError = {currentError}
+                      fieldCurrent = {touched}
+                      onBlur={formValidation }   
                     /> 
-                    {
-                      formError && <p>{formError.selectBedNum}</p>
-                    }
+                    
 
 
                     <SelectItem
@@ -589,10 +617,17 @@ const Booking = () =>{
                       name='selectBathNum'
                       id='selectBathNum'
                       required={true}
-                      onChange={handleFormChange} 
+                      onChange={handleFormChange}
+                      
+                      error={formError.selectBathNum}  
+                      fieldError = {currentError}
+                      fieldCurrent = {touched}
+                      onBlur={formValidation }   
+                      
                     />        
-  
-                      {
+                    
+                   
+                    {
                         addressArray.map((input) => (
                           <Input
                           key={input.id}
@@ -601,12 +636,12 @@ const Booking = () =>{
                           value={formData[input.name]}     
                           error={formError[input.name]}  
                           onBlur={formValidation}              
-                          onChange={handleFormChange}
+                          onChange={handleFormChange}                
                           
-                          
-                        />
-                          ))
-                        }
+                          />
+                        ))
+                     }
+                     
                         <SelectItem
                             label="State"
                             options={[
@@ -615,7 +650,12 @@ const Booking = () =>{
                             value={FormData}
                             name='stateAddress'
                             id='stateAddress'
-                            onChange={handleFormChange}       
+                            onChange={handleFormChange}    
+                            
+                            error={formError.stateAddress}  
+                            fieldError = {currentError}
+                            fieldCurrent = {touched}
+                            onBlur={formValidation }  
                         />
   
                       </div>
@@ -636,7 +676,12 @@ const Booking = () =>{
                           name='selectCleanType'
                           id='selectCleanType'
                           required={true}
-                          onChange={handleFormChange} 
+                          onChange={handleFormChange}
+
+                          error={formError.selectCleanType}  
+                          fieldError = {currentError}
+                          fieldCurrent = {touched}
+                          onBlur={formValidation }   
                         />
                       </div>
   
@@ -712,6 +757,8 @@ const Booking = () =>{
                             error={formError[input.name]}  
                             onBlur={formValidation}              
                             onChange={handleFormChange}
+                            fieldError = {currentError}
+                            fieldCurrent = {touched}         
                       
                       
                     />
@@ -728,7 +775,12 @@ const Booking = () =>{
                           value={formData}
                           name='selectCleanTime'
                           id='selectCleanTime'
-                          onChange={handleFormChange}       
+                          onChange={handleFormChange}  
+                          
+                          error={formError.selectCleanType}  
+                          fieldError = {currentError}
+                          fieldCurrent = {touched}
+                          onBlur={formValidation }   
                       />
   
                     </div>
@@ -736,7 +788,7 @@ const Booking = () =>{
                   </section>
             
                 <div>
-                <button>Submit</button>             
+                <button disabled={!formValidation}>Submit</button>             
                 </div>
              </form>
                 {
