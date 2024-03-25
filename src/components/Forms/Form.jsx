@@ -344,7 +344,7 @@ const Booking = () =>{
     if (formData.cleaningDate ==='') {
       validationError.cleaningDate ='Cleaning date is required'
       formValid = false
-    }else if(formData.cleaningDate > currentDate){
+    }else if(formData.cleaningDate < currentDate){
       validationError.cleaningDate ='Cleaning date can\'t be prior to current date'
       formValid = false
     }
