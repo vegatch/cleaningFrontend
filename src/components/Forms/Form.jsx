@@ -760,6 +760,7 @@ const Booking = () =>{
                             key={input.id}
                             {...input}
                             type={input.type}
+                            inputMode='text'
                             value={formData[input.name]}     
                             error={formError[input.name]}  
                             onBlur={formValidation}              
@@ -794,7 +795,7 @@ const Booking = () =>{
                   </section>
             
                 <div>
-                <button disabled={!formValidation}>{isTransmitting ? "Submitting..." : "Submit"}</button>             
+                <button >{isTransmitting ? "Submitting..." : "Submit"}</button>             
                 </div>
              </form>
                 {
